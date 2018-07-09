@@ -12,6 +12,7 @@ scrapy = "*"
 django-heroku = "*"
 dj-database-url = "*"
 gunicorn = "*"
+scrapyd-client = "*"
 
 
 [dev-packages]
