@@ -1,6 +1,6 @@
 import scrapy
 import scrapy.spiders
-from Movie.items import SearchItem
+from crawler.items import SearchItem
 
 class SearchSpyder(scrapy.Spider):
 	name = "search"
