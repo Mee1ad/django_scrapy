@@ -13,11 +13,7 @@ def api(request):
 
     end = timeit.default_timer()
     runtime = end - start
-    return JsonResponse({
-        'status': true,
-        'text': "What do you expect to do?",
-        'time': runtime
-    }, encoder=JSONEncoder)
+    
     if request.method == 'POST':
     	data = json.loads(request.body)
     	state = data['state']
@@ -26,7 +22,14 @@ def api(request):
     	job = scrapyd.schedule('crawler', 'search', category=f"{category}", movieName=f"{movie}")
 
     	return JsonResponse({
-        'status': true,
+        'status': "ok",
         'text': job,
+        'time': runtime
+    }, encoder=JSONEncoder)
+
+    else:
+    	return JsonResponse({
+        'status': "ok",
+        'text': "What do you expect to do?",
         'time': runtime
     }, encoder=JSONEncoder)
