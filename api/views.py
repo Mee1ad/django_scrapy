@@ -22,7 +22,7 @@ def api(request):
 
 		if state == "search_movie":
 			table = db['movie']
-			sql = f'SELECT * FROM movie WHERE name LIKE "{name}"'
+			sql = f'SELECT * FROM movie WHERE name = "{name}"'
 			results = db.query(sql)
 			movies = []
 			movie = {}
