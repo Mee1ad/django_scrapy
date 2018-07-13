@@ -4,6 +4,7 @@ from scrapyd_api import ScrapydAPI
 from json import JSONEncoder
 import timeit
 import json
+import dataset
 
 start = timeit.default_timer()
 scrapyd = ScrapydAPI('https://myscrapyd.herokuapp.com/')
