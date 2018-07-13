@@ -9,7 +9,7 @@ class AllMovieFinderSpyder(scrapy.Spider):
 	name = "all_movies"
 	allowed_domains = ["dibamoviez.pw"]
 	start_urls = ['http://dibamoviez.pw/']
-	self.page = 1
+	page = 1
 
 	def parse(self,response):
 		article_link = response.css("div[class='movies'] > article > div > h2 > a::attr('href')").extract()
