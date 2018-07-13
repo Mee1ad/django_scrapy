@@ -18,7 +18,7 @@ def api(request):
 		data = json.loads(request.body)
 		state = data['state']
 		name = data['name']
-		name = '%' + name + '%'
+		#name = '%' + name + '%'
 
 		if state == "search_movie":
 			table = db['movie']
