@@ -18,10 +18,11 @@ def api(request):
 		data = json.loads(request.body)
 		state = data['state']
 		name = data['name']
+		name = '%' + name + '%'
 
 		if state == "search_movie":
 			table = db['movie']
-			sql = f'SELECT * FROM movie WHERE name LIKE "%{name}%"'
+			sql = f'SELECT * FROM movie WHERE name LIKE {name}'
 			results = db.query(sql)
 			movies = []
 			movie = {}
@@ -39,7 +40,7 @@ def api(request):
 
 		if state == "get_movie":
 			table = db['movie']
-			sql = f'SELECT * FROM movie WHERE name LIKE "%{movie}%" LIMIT 1'
+			sql = f'SELECT * FROM movie WHERE name LIKE "{name}" LIMIT 1'
 			results = db.query(sql)
 			movie = {}
 			for result in results:
