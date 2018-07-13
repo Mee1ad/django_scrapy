@@ -7,7 +7,7 @@
 
 db = dataset.connect('postgresql://yraitcrdcotuhb:6c41e7f3055517601bffd7be8434801d2bb96234171828dc7f860432705b405d@ec2-107-20-224-137.compute-1.amazonaws.com:5432/d7fi5emvoirfqc')
 class CrawlerPipeline(object):
-    def process_item(self, item, spider):
+	def process_item(self, item, spider):
 		if item['category'] == 'movie':
 			table = db['movie']
 		if item['category'] == 'serial':
