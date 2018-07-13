@@ -62,6 +62,6 @@ def api(request):
 		end = timeit.default_timer()
 		return JsonResponse({
 		'status': "ok",
-		'text': "Method post : \n state : search_movie \n args : name = 'Overboard' or 'Siberia' or other movies in our db :))",
+		'text': "Method : post --- state = search_movie ---  name = 'Overboard' or 'Siberia' or other movies in our db :))",
 		'time': end - start
 	}, encoder=JSONEncoder)
