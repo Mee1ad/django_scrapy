@@ -24,7 +24,7 @@ def api(request):
 			return JsonResponse({
 			'status': "ok",
 			'text': f'{movie}',
-			'time': runtime
+			'time': end - start
 		}, encoder=JSONEncoder)
 
 
@@ -33,5 +33,5 @@ def api(request):
 		return JsonResponse({
 		'status': "ok",
 		'text': "What do you expect to do?",
-		'time': runtime
+		'time': end - start
 	}, encoder=JSONEncoder)
