@@ -14,7 +14,7 @@ scrapyd = ScrapydAPI('https://myscrapyd.herokuapp.com/')
 def api(request):
 
 	if request.method == 'POST':
-		db = dataset.connect('postgres://yraitcrdcotuhb:6c41e7f3055517601bffd7be8434801d2bb96234171828dc7f860432705b405d@ec2-107-20-224-137.compute-1.amazonaws.com:5432/d7fi5emvoirfqc')
+		db = dataset.connect('postgresql://yraitcrdcotuhb:6c41e7f3055517601bffd7be8434801d2bb96234171828dc7f860432705b405d@ec2-107-20-224-137.compute-1.amazonaws.com:5432/d7fi5emvoirfqc')
 		data = json.loads(request.body)
 		state = data['state']
 		name = data['name']
