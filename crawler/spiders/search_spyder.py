@@ -1,6 +1,6 @@
 import scrapy
 import scrapy.spiders
-from crawler.items import SearchItem
+from crawler.items import MovieItem
 
 class SearchSpyder(scrapy.Spider):
 	name = "search"
@@ -9,7 +9,7 @@ class SearchSpyder(scrapy.Spider):
 	def __init__(self, category, movieName, *args, **kwargs):
 		super(SearchSpyder, self).__init__(*args, **kwargs)
 		self.item = SearchItem()
-		self.item['movieName'] = movieName
+		self.item['name'] = movieName
 		self.item['category'] = category
 		self.start_urls = [f"http://dibamoviez.pw/?s={movieName.replace(' ','+')}"]
 		

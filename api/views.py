@@ -14,23 +14,15 @@ def api(request):
 	if request.method == 'POST':
 		data = json.loads(request.body)
 		state = data['state']
-		movie = data['movie']
-		category = data['category']
-		job = scrapyd.schedule('crawler', 'search', category=f"{category}", movieName=f"{movie}")
-		while(scrapyd.job_status('crawler', job) == 'pending'):
-			print("Pending")
-			time.sleep(.5)
-			print("Continue")
-			continue
-		else:
-			 print("Complete")
+		if state == "find_all_movies":
+			job = scrapyd.schedule('crawler', 'all_movies')
 
-		end = timeit.default_timer()
-		return JsonResponse({
-		'status': "ok",
-		'text': job,
-		'time': runtime
-	}, encoder=JSONEncoder)
+			end = timeit.default_timer()
+			return JsonResponse({
+			'status': "ok",
+			'text': 'Job Submited /n You Can See Logs in Scrapyd or Gerapy',
+			'time': runtime
+		}, encoder=JSONEncoder)
 
 	else:
 		end = timeit.default_timer()
