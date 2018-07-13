@@ -7,7 +7,11 @@
 import scrapy
 from scrapy.item import Item, Field
 
-class SearchItem(scrapy.Item):
-	movieName = scrapy.Field()
+class MovieItem(scrapy.Item):
+	name = scrapy.Field()
+	year = scrapy.Field()
 	category = scrapy.Field()
-	link = scrapy.Field()
+	link480 = scrapy.Field()
+	link720 = scrapy.Field()
+	link1080 = scrapy.Field()
+	photo = scrapy.Field()
