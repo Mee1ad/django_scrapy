@@ -15,6 +15,7 @@ gunicorn = "*"
 scrapyd-client = "*"
 python-scrapyd-api = "*"
 dataset = "*"
+stuf = "*"
 
 
 [dev-packages]
