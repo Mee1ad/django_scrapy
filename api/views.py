@@ -33,8 +33,8 @@ def api(request):
 			    movies.append(movie)
 			end = timeit.default_timer()
 			return JsonResponse({
-			'status': "ok",
-			'text': f'{movies}',
+			'status': True,
+			'text': movies,
 			'time': end - start
 		}, encoder=JSONEncoder)
 
@@ -51,9 +51,8 @@ def api(request):
 			    movie['link720'] = result['link720']
 			    movie['link1080'] = result['link1080']
 			return JsonResponse({
-			'status': "ok",
-			'text': f'{movie}',
-			'text2': movie,
+			'status': True,
+			'text': movie,
 			'time': end - start
 		}, encoder=JSONEncoder)
 
