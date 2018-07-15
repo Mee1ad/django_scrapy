@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path,url
 from . import views
 
 urlpatterns = [
-    path(r'^/api/search_movie/$', views.search_movie, name='search_movie'),
+    url(r'^/api/search_movie/$', views.search_movie, name='search_movie'),
 ]
