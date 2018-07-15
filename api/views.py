@@ -12,9 +12,7 @@ db = dataset.connect('postgresql://yraitcrdcotuhb:6c41e7f3055517601bffd7be843480
 @csrf_exempt
 def search_movie(request):
 	data = json.loads(request.body)
-	state = data['state']
 	name = data['name']
-	#name = '%' + name + '%'
 	table = db['movie']
 	sql = f"SELECT * FROM movie WHERE name LIKE '%{name}%'"
 	results = db.query(sql)
