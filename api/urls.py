@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path(r'^api/search_movie/$', views.search_movie, name='search_movie'),
+    path(r'^/api/search_movie/$', views.search_movie, name='search_movie'),
 ]
