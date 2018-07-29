@@ -67,10 +67,7 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
     'crawler.pipelines.MoviePipeline': 300,
     'crawler.pipelines.SerialpipeLine': 300,
-    'crawler.pipelines.MovieLinkPipeline': 300,
     'crawler.pipelines.SerialLinkPipeline': 300,
-    'crawler.pipelines.SoftwarePipeline': 300,
-    'crawler.pipelines.MusicPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
